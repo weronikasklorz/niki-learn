@@ -1,0 +1,59 @@
+﻿.question{
+    text-align: center;
+    color: midnightblue;
+}
+
+.pictures{
+    padding-left: 50px;
+}
+
+.answer{
+    margin: 20px 0 40px 175px;
+    text-align: center;
+    color: midnightblue;
+}
+
+.check{
+    position: relative;
+    left: 44%;
+    padding: 20px 25px;
+    border: none;
+    border-radius: 2px;
+    background: midnightblue;
+    color: white;
+    font-weight: bold;
+}
+
+.score{
+    font-weight: bold;
+    color: midnightblue;
+    font-size: 24px;
+    position: relative;
+    padding-top: 30px;
+    left: 43%;
+    width: 30%;
+}
+
+.sign{
+    width: 10px;
+}
+
+.hint{
+    display: inline;
+    padding: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hint-container{
+    width: 350px;
+    background: midnightblue;
+    border-radius: 3px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.chooseButton{
+    background-color: yellow;
+}

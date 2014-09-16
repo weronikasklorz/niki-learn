@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html ng-app="NikiLearn" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>NIKI LEARN</title>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+
+<body ng-controller="NikiLearnController as con">
+
+    <p>{{con.task[1].answers[con.nr].text}}</p>
+    <div ng-repeat="odp in con.task[2].odpowiedzi">
+        <button ng-click="con.chooseAnswer(odp)" ng-class="{chooseButton: odp.isHighlighted}" ng-style="checkedAnswer">{{odp.text}}</button>
+
+    </div>
+    <button ng-click="con.check1(con.choosenWord, con.task[1].answers[con.nr].correctAnswer)">Check</button>
+
+
+    <button ng-click="con.changeNr(con.nr)"> Next </button>
+    <p>Your score: {{con.x}}</p>
+    {{con.koniec}}
+
+
+    </br></br></br></br></br></br></br>
+    <h1 class="question">{{con.task[0].question}}</h1>
+    <div class="hint-container">
+        <p class="hint" ng-repeat="hint in con.task[0].answers">{{hint.correctAnswer}}</p>
+    </div>
+    <div>
+        <img  class="pictures" ng-repeat="ad in con.task[0].answers" ng-src="{{ad.adres}}"/>
+    </div>
+    <div>
+        <input class="answer" ng-model="answer1" ng-style="con.answerColor1">
+        <img class="sign" ng-show="con.ok1" ng-src="ok">
+        <img class="sign" ng-show="con.notok1" ng-src="notok">
+        <input class="answer" ng-model="answer2" ng-style="con.answerColor2">
+        <img class="sign" ng-show="con.ok2" ng-src="ok">
+        <img class="sign" ng-show="con.notok2" ng-src="notok">
+        <input class="answer" ng-model="answer3" ng-style="con.answerColor3">
+        <img class="sign" ng-show="con.ok3" ng-src="ok">
+        <img class="sign" ng-show="con.notok3" ng-src="notok">
+    </div>
+    <button class="check" ng-hide="con.visible" ng-click="con.check( 0, answer1, answer2, answer3)">Check it!</button>
+    <button class="check" ng-show="con.visible" ng-click="con.reset()">Again???</button>
+    <p class="score" ng-show="con.visible"> Your score is {{con.score}}</p>
+
+</body>
+</html>
